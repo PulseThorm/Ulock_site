@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "id": "ar-101",
+      "type": "article",
+      "slug": "gnomos-certifican-escalera-12px",
+      "title": "Gnomos certifican escalera de 12px para uso profesional",
+      "subtitle": "El sindicato exige barandas antideslizantes en píxel-art",
+      "author": "Ulock Press",
+      "date": "2025-08-09",
+      "hero": { "kind": "svg", "seed": 101 },
+      "body": [
+        "Tras años de debates, el Consejo de Gnomos Ingenieros aprobó la escalera de 12 píxeles como estándar profesional.",
+        "Los detractores aseguran que los 12px son 'demasiado OP' para contenidos de mundo abierto. El comité respondió con un meme.",
+        "La implementación será gradual: primero en zonas seguras, luego en mazmorras con iluminación dudosa."
+      ],
+      "tags": ["sociedad", "gnomos"],
+      "rarity": "rare"
+    },
+    {
+      "id": "ar-102",
+      "type": "article",
+      "slug": "murlocs-firman-pacto-silencio",
+      "title": "Murlocs firman pacto de silencio antes de su gira sinfónica",
+      "subtitle": "La orquesta de Dalaran prepara traducción simultánea a 'mrgl'",
+      "author": "Ulock Press",
+      "date": "2025-08-08",
+      "hero": { "kind": "svg", "seed": 102 },
+      "body": [
+        "Representantes murloc indicaron que el silencio es parte del proceso creativo. 'Mrgl', declaró el vocero, en tono moderato.",
+        "Los ensayos demandan partituras impermeables y atriles anti-splash. El gremio de sastres presentó capas secantes.",
+        "La gira incluirá recitales en puertos con buena acústica y olor a algas. Los pescadores piden entradas a precio amigo."
+      ],
+      "tags": ["cultura", "murlocs"],
+      "rarity": "uncommon"
+    },
+    { "id": "sn-001", "type": "snippet", "title": "Nueva dungeon: 'Pasillo sin Salida' anuncia 12 jefes idénticos", "subtitle": "Los jugadores celebran la optimización de drops repetidos", "author": "Ulock Press", "date": "2025-08-10", "tags": ["dungeon","loot"], "rarity": "common" },
+    { "id": "sn-002", "type": "snippet", "title": "Hotfix reduce el daño de todo en 1% y lo aumenta en 1%", "subtitle": "Balance perfecto, confirman fuentes que no existen", "author": "Ulock Press", "date": "2025-08-11", "tags": ["balance","parches"], "rarity": "uncommon" },
+    { "id": "sn-003", "type": "snippet", "title": "Nueva profesión: Cartografía de Bugs", "subtitle": "Consigue mapas con los mejores agujeros del terreno", "author": "Ulock Press", "date": "2025-08-12", "tags": ["profesiones","meme"], "rarity": "rare" },
+    { "id": "sn-004", "type": "snippet", "title": "PTR filtra montura 'Cabra de Latencia Controlada'", "subtitle": "Corre más si tu ping sube, ideal para raids de viernes", "author": "Ulock Press", "date": "2025-08-13", "tags": ["monturas","rendimiento"], "rarity": "uncommon" }
+  ]
+}
