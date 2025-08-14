@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ulock Guide — Guías solemnes para warlocks incrédulos</title>
+  <meta name="description" content="Ulock Guide: procedimientos, rutas y otras ocurrencias para World of Warcraft que parecen serios, pero no." />
+  <meta name="theme-color" content="#8b5cf6">
+  <style>
+    :root{ --bg:#0b0f1e; --bg2:#0e1329; --fg:#e9e9ff; --muted:#a6a6d9; --accent:#a78bfa; --accent2:#22d3ee; --ring:rgba(167,139,250,.5); }
+    *{box-sizing:border-box}
+    body{ margin:0; color:var(--fg); background:
+      radial-gradient(1200px 800px at -10% -10%, #3b82f6 0%, transparent 60%),
+      radial-gradient(900px 700px at 110% 10%, #a78bfa 0%, transparent 55%),
+      linear-gradient(160deg, var(--bg), var(--bg2) 60%);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Noto Color Emoji", sans-serif;
+    }
+    .topbar{position:fixed; top:0; left:0; right:0; background:rgba(0,0,0,.4); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:space-between; padding:10px 20px; z-index:50}
+    .brand{display:flex; gap:10px; align-items:center; font-weight:800;}
+    .logo{width:42px; height:42px; border-radius:10px; background:conic-gradient(from 210deg, var(--accent2), var(--accent), #22c55e, #f43f5e, var(--accent2)); filter:drop-shadow(0 6px 18px rgba(34,211,238,.3));}
+    nav.menu{display:flex; gap:16px;}
+    nav.menu a{color:var(--fg); text-decoration:none; font-weight:600;}
+    nav.menu a:hover{color:var(--accent2);}
+    .mode{display:flex; align-items:center; gap:6px; font-size:.85rem;}
+    .switch{position:relative; width:38px; height:20px;}
+    .switch input{opacity:0; width:0; height:0;}
+    .slider{position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background:#555; transition:.2s; border-radius:20px;}
+    .slider:before{position:absolute; content:""; height:16px; width:16px; left:2px; bottom:2px; background:white; border-radius:50%; transition:.2s;}
+    input:checked + .slider{background:var(--accent);}
+    input:checked + .slider:before{transform:translateX(18px);}
+    .wrap{max-width:1100px; margin:0 auto; padding-top:80px; padding-left:20px; padding-right:20px;}
+    .landing{position:relative; min-height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:url('https://picsum.photos/1200/800') center/cover no-repeat; border-radius:22px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.35);}
+    .landing h1{margin:0; font-size:clamp(32px,6vw,64px); opacity:0; transform:translateY(-40px); animation:drop 1s ease forwards;}
+    .landing p.desc{max-width:600px; margin-top:14px; opacity:0; transform:translateY(40px); animation:rise 1s ease .2s forwards;}
+    .landing small.note{position:absolute; bottom:8px; right:12px; font-size:.55rem; opacity:.7;}
+    @keyframes drop{to{opacity:1; transform:translateY(0);}}
+    @keyframes rise{to{opacity:1; transform:translateY(0);}}
+    section.content-section{margin-top:60px;}
+    .grid{display:grid; grid-template-columns:1fr; gap:16px;}
+    @media(min-width:900px){ .grid{grid-template-columns:1fr 1fr} }
+    .panel{background:rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px}
+    .panel h3{margin:.2rem 0 .6rem; font-size:1.1rem; color:#ffe09a}
+    .list{margin:.2rem 0 .6rem; padding-left:1.2rem}
+    .kbd{font-family:ui-monospace,Menlo,Consolas,monospace;background:#10152a;border:1px solid rgba(255,255,255,.12);padding:.16rem .38rem;border-radius:6px}
+    .news-grid{display:grid; gap:12px; grid-template-columns:1fr}
+    @media(min-width:860px){ .news-grid{grid-template-columns:repeat(2,1fr)} }
+    .news-card{background:rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:14px}
+    .news-meta{display:flex; gap:10px; flex-wrap:wrap; opacity:.9}
+    .btn{appearance:none; border:1px solid rgba(255,255,255,.12); background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03)); color:var(--fg); padding:.65rem .95rem; border-radius:12px; font-weight:600; text-decoration:none; display:inline-flex; gap:8px; align-items:center}
+    .btn:hover{border-color:var(--ring)}
+    body.serio{filter:grayscale(1);}
+    body.serio p::after,
+    body.serio li::after,
+    body.serio h1::after,
+    body.serio h2::after,
+    body.serio h3::after,
+    body.serio h4::after,
+    body.serio small::after,
+    body.serio time::after,
+    body.serio a.btn::after{content:' 🗿';}
+  </style>
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <div>Ulock Guide</div>
+        <small class="muted">Compendio formal de estrategias dudosas</small>
+      </div>
+    </div>
+    <nav class="menu">
+      <a href="#home">Home</a>
+      <a href="#procedimientos">Procedimientos, rutas y más!</a>
+    </nav>
+    <div class="mode">
+      <label class="switch">
+        <input type="checkbox" id="modeToggle" />
+        <span class="slider"></span>
+      </label>
+      <span id="modeLabel">Modo normal</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="home" class="landing">
+      <h1>Guía operativa para warlocks</h1>
+      <p class="desc">Manual severo de tácticas no verificadas, aptas para quienes disfrutan perder el tiempo con estilo</p>
+      <small class="note">esta página es exclusivamente para webear a ulock y sus guías que son de muy dudosa fuente</small>
+    </section>
+
+    <section id="procedimientos" class="content-section">
+      <div class="grid">
+        <div class="panel">
+          <h3>Requisitos previos</h3>
+          <ul class="list">
+            <li>Nivel de preparación: alto, o ganas de improvisar</li>
+            <li>Addons preferiblemente desactualizados</li>
+            <li>Conexión estable a ratos</li>
+          </ul>
+          <h3>Ruta óptima</h3>
+          <ol class="list">
+            <li>Identifica el “NPC responsable”</li>
+            <li>Ejecuta los pasos en orden dudoso</li>
+            <li>Si funciona, documenta; si no, finge que era un test A/B</li>
+          </ol>
+        </div>
+
+        <div class="panel">
+          <h3>Notas del autor</h3>
+          <ul class="list">
+            <li>Si algo explota, es parte del diseño</li>
+            <li>No intentes esto en heroico. O sí, total…</li>
+            <li>Usa <span class="kbd">/ulock "tu texto"</span> para generar el enlace compartible</li>
+          </ul>
+          <p class="muted">Compatibilidad: addon UlockAnalGuide</p>
+        </div>
+
+        <div class="panel" style="grid-column:1/-1">
+          <h3>Mapa de ruta (detalle)</h3>
+          <div class="illus">
+            <svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ruta detallada Ulock">
+              <defs>
+                <linearGradient id="rGlow" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/>
+                </linearGradient>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+                  <polygon points="0 0, 6 3, 0 6" fill="#a78bfa"/>
+                </marker>
+              </defs>
+              <rect width="760" height="260" fill="#0b1026"/>
+              <g stroke="rgba(255,255,255,.08)">
+                <path d="M0 40 H760M0 80 H760M0 120 H760M0 160 H760M0 200 H760" />
+              </g>
+              <g fill="url(#rGlow)">
+                <circle cx="80" cy="180" r="10"/><text x="80" y="200" fill="#e9e9ff" font-size="12" text-anchor="middle">Inicio</text>
+                <circle cx="300" cy="130" r="8"/><text x="300" y="150" fill="#e9e9ff" font-size="12" text-anchor="middle">NPC Bug</text>
+                <circle cx="510" cy="90" r="8"/><text x="510" y="110" fill="#e9e9ff" font-size="12" text-anchor="middle">Portal ?</text>
+                <circle cx="680" cy="60" r="10"/><text x="680" y="80" fill="#e9e9ff" font-size="12" text-anchor="middle">Jefe</text>
+              </g>
+              <path d="M80 180 C 170 120, 220 160, 300 130 C 380 100, 440 110, 510 90 C 560 75, 620 70, 680 60" stroke="url(#rGlow)" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+              <path d="M300 130 C 260 60, 410 50, 460 120" stroke="#a78bfa" stroke-dasharray="5 6" fill="none" opacity=".6"/>
+              <path d="M510 90 C 540 140, 620 130, 680 60" stroke="#22d3ee" stroke-dasharray="5 6" fill="none" opacity=".6"/>
+              <g>
+                <rect x="16" y="16" width="190" height="64" rx="10" fill="rgba(0,0,0,.35)" stroke="rgba(255,255,255,.12)"/>
+                <circle cx="32" cy="36" r="5" fill="url(#rGlow)"/>
+                <text x="48" y="40" fill="#e9e9ff" font-size="12">Ruta principal</text>
+                <line x1="26" y1="56" x2="38" y2="56" stroke="#a78bfa" stroke-dasharray="5 6"/>
+                <text x="48" y="60" fill="#e9e9ff" font-size="12">Atajo (probablemente fake)</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:20px">
+        <h3>Guías de Ulock (o quizá de su ano)</h3>
+        <div id="newsContainer">Cargando guías…</div>
+        <div style="margin-top:10px"><a class="btn" href="/news/list">📚 Ver grilla y filtros</a></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script type="module">
+  import { initNews, renderNewsInto, maybeRenderArticleOrList } from '/news/news.js';
+
+  Vue.createApp({}).mount('#app');
+
+  await initNews('/news/news_bank.json');
+  if (!location.pathname.startsWith('/news/')) {
+    await renderNewsInto('#newsContainer');
+  } else {
+    await maybeRenderArticleOrList('#newsContainer');
+  }
+
+  const toggle = document.getElementById('modeToggle');
+  const label = document.getElementById('modeLabel');
+  function applyMode(){
+    if(toggle.checked){
+      document.body.classList.add('serio');
+      label.textContent = 'Modo serio 🗿';
+    } else {
+      document.body.classList.remove('serio');
+      label.textContent = 'Modo normal';
+    }
+  }
+  toggle.addEventListener('change', applyMode);
+  applyMode();
+</script>
+</body>
+</html>
